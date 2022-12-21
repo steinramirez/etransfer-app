@@ -1,16 +1,19 @@
-import React from 'react';
+import * as React from 'react';
 import './Appx.css';
 import image from './assets/logoetransfer.png';
 import { TickerTape } from "react-ts-tradingview-widgets";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWandMagicSparkles, faFire, faUserClock, faShieldHalved } from '@fortawesome/free-solid-svg-icons'
+import { faWandMagicSparkles, faFire, faUserClock, faShieldHalved } from '@fortawesome/free-solid-svg-icons';
+
 
 library.add(faWandMagicSparkles);
 
 function App() {
   const currentYear = new Date().getFullYear();
+ 
 
+  
   return (
     <div className="App">
 
@@ -22,6 +25,7 @@ function App() {
           <button className="navButton">About</button>
           <button className="navButton">What is</button>
           <button className="navButton">FAQ</button>
+          
         </div>
       </nav>
       <section className='content' id='home'><img src={image} alt='Logo' className='imgContent' />
@@ -61,7 +65,7 @@ function App() {
 
       </section>
       <footer>
-        <div className='footersections'>
+        <div className='footersection'>
           <div className='btnfooter' href='#home'style={{ flex: 1 }}>
             Home
           </div>
