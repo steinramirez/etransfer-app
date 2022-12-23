@@ -34,7 +34,9 @@ html {
     width: 100vw;
     overflow-x: hidden;
   }
-
+  .onConstruction{
+    display: none;
+  }
   .navbar {
     width: 100%;
     height: 80px;
