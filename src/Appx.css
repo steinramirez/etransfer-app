@@ -5,12 +5,13 @@
   --p-size: 25px;
   --h2-size: 40px;
   --max-width: 85%;
+  --bg-app: rgb(26, 26, 26);
 }
 
 * {
   margin: 0 auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
+  /* border: 1px solid white; */
 }
 
 .App {
@@ -24,9 +25,11 @@
 html {
   width: 100vw;
   height: 100vh;
+  background-color: var(--bg-app);
 }
 
-@media (width <=700px) {
+/* mobile version */
+@media (360px <=width <=699px) {
   body {
     width: 100vw;
     overflow-x: hidden;
@@ -37,13 +40,17 @@ html {
     height: 80px;
     background-color: rgb(28, 28, 28);
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .navButton {
+    display: none;
     width: 100%;
     height: 100%;
-    font-Size: 15pt;
+    font-Size: 5%;
     color: rgb(227, 227, 227);
     border-style: none;
     background: rgb(27, 27, 27);
@@ -51,7 +58,7 @@ html {
   }
 
   .navButton:hover {
-    font-Size: 15pt;
+    font-Size: 5%;
     color: rgb(56, 108, 221);
     height: 100%;
     width: 100%;
@@ -59,25 +66,28 @@ html {
     border-style: none;
     cursor: pointer;
     transition-duration: 1s;
+    display: none;
   }
 
   .btns {
     display: flex;
-    width: 30vw;
+    width: 40px;
   }
 
+  .menuIcon {}
+
   .logo {
-    width: 40vw;
+    width: 50%;
 
   }
 
   .imageLogo {
-    width: 60%;
+    width: 100%;
   }
 
   .content {
     width: 100%;
-    height: 980px;
+    height: 600px;
     background: black;
     display: flex;
     justify-content: center;
@@ -106,13 +116,244 @@ html {
     }
   }
 
+  .serviceSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 800px;
+    width: 100%;
+    justify-content: space-around;
+    background: linear-gradient(rgb(26, 26, 26, 1), rgb(26, 26, 26));
+    background-repeat: no-repeat;
+    z-index: 1;
+    color: rgb(255, 255, 255);
+  }
+
+  .titleService {
+    height: 100px;
+  }
+
+  .cards {
+    display: flex;
+    height: 400px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .card {
+    height: 81%;
+    width: 249px;
+    border-radius: 30px;
+    background-color: rgb(28, 28, 28);
+    box-shadow: 0 0px 10px 2px rgb(80, 80, 80, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    flex-direction: column;
+    gap: 10px;
+    color: aliceblue;
+    padding: 30px;
+    transition-duration: 1s;
+  }
+
+  .card:hover {
+    height: 81%;
+    width: 250px;
+    border-radius: 30px;
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: aliceblue;
+    padding: 30px;
+    gap: 10px;
+    perspective-origin: top left;
+    transform: translateY(-10px);
+    transition-duration: 1s;
+
+  }
+
+  .card:nth-of-type(1):hover .fireIcon {
+    color: orange;
+    transition-duration: 1s;
+  }
+
+  .card:nth-of-type(2):hover .timeIco {
+    color: rgb(0, 136, 255);
+    transition-duration: 1s;
+  }
+
+  .card:nth-of-type(3):hover .supportIco {
+    color: rgb(149, 0, 255);
+    transition-duration: 1s;
+  }
+
+  .aboutSection {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    background-color: rgb(26, 26, 26);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sectionL,
+  .sectionR {
+    text-align: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 100px;
+  }
+
+  .sectionR {
+    width: 80%;
+    height: 500px;
+
+  }
+
+  .sectionL {
+    width: 100%;
+    height: 400px;
+    margin-top: 200px;
+
+
+  }
+
+  .whatis {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(59, 52, 52);
+    flex-wrap: wrap;
+    width: 100%;
+    background: url('./assets/btc3dimage.png');
+    background-color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position-y: -20px;
+    
+    background-position-x: 20px;
+    transition-duration: 1s;
+    animation: animate-background 2s ease-in-out infinite;
+  }
+
+  @keyframes animate-background {
+    from {
+      background-position-y: 0;
+    }
+
+    50% {
+      background-position-y: 3% 
+    }
+
+    to {
+      background-position-y: 0;
+    }
+  }
+
+  .whatis:hover {
+    background-size: 230px;
+    transition-duration: 1s;
+  }
+
+  .whatsText {
+    padding: 180px 30px 30px 30px;
+  }
+
+  .titleWhatIs {
+    margin-bottom: 10px;
+  }
+
+  footer {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: rgb(27, 66, 100);
+  }
+
+  .footersection {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+    height: 30%;
+    width: 100%;
+
+
+  }
+
+  .btnfooter {
+    background-color: rgb(27, 66, 100);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.2s;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .btnfooter:hover {
+
+    height: 100%;
+    transform: translateY(-20px);
+    transition-duration: 0.2s;
+    border-radius: 10px 10px 0 0;
+
+  }
+
+  #tradingview_widget_wrapper {
+    background-color: black;
+    width: 100%;
+  }
+
 }
 
-@media (width >=700px) {
+/* tablet version */
+@media (700px <=width <=1519px) {
   body {
     max-width: 100vw;
     overflow-x: hidden;
     background-color: rgb(26, 26, 26);
+  }
+
+  .appContent {
+
+    display: none;
+  }
+
+  .onConstruction {
+    font-size: 25px;
+    display: block;
+    height: 90vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    align-items: center;
+    background-image: url('./assets/logoetransfer.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 200px;
   }
 
   h1 {
@@ -164,6 +405,10 @@ html {
     width: 20vw;
   }
 
+  .menuIcon {
+    display: none;
+  }
+
   .logo {
     text-align: left;
     display: flex;
@@ -209,170 +454,477 @@ html {
     }
   }
 
+  .serviceSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 800px;
+    gap: 200px;
+    background: linear-gradient(rgb(26, 26, 26, 1), rgb(26, 26, 26));
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    color: rgb(255, 255, 255);
+  }
+
+
+  .cards {
+    display: flex;
+    height: 500px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+  }
+
+  .card {
+    height: 81%;
+    width: 16%;
+    border-radius: 30px;
+    background-color: rgb(28, 28, 28);
+    box-shadow: 0 0px 10px 2px rgb(80, 80, 80, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    flex-direction: column;
+    gap: 60px;
+    color: aliceblue;
+    padding: 50px;
+    transition-duration: 1s;
+  }
+
+  .card:hover {
+    height: 81%;
+    width: 16%;
+    border-radius: 30px;
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: aliceblue;
+    padding: 50px;
+    perspective-origin: top left;
+    transform: translateY(-10px);
+    transition-duration: 1s;
+
+  }
+
+  .card:nth-of-type(1):hover .fireIcon {
+    color: orange;
+    transition-duration: 1s;
+  }
+
+  .card:nth-of-type(2):hover .timeIco {
+    color: rgb(0, 136, 255);
+    transition-duration: 1s;
+  }
+
+  .card:nth-of-type(3):hover .supportIco {
+    color: rgb(149, 0, 255);
+    transition-duration: 1s;
+  }
+
+  .aboutSection {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(26, 26, 26);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .sectionL,
+  .sectionR {
+    text-align: center;
+    height: 100%;
+    margin-top: 7em;
+  }
+
+  .sectionR {
+    width: 50%;
+  }
+
+  .sectionL {
+    width: 30%;
+
+  }
+
+  .whatis {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(59, 52, 52);
+    flex-wrap: wrap;
+    width: 100%;
+    background: url('./assets/btc3dimage.png');
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+  }
+
+  .whatsText {
+    padding: 90px;
+  }
+
+  .titleWhatIs {
+    margin-bottom: 10px;
+  }
+
+  footer {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: rgb(27, 66, 100);
+  }
+
+  .footersection {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+    height: 30%;
+    width: 100%;
+
+
+  }
+
+  .btnfooter {
+    background-color: rgb(27, 66, 100);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.2s;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .btnfooter:hover {
+
+    height: 100%;
+    transform: translateY(-20px);
+    transition-duration: 0.2s;
+    border-radius: 10px 10px 0 0;
+
+  }
+
+  #tradingview_widget_wrapper {
+    background-color: black;
+    width: 100%;
+  }
 }
 
-.serviceSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 800px;
-  gap: 200px;
-  background: linear-gradient(rgb(26, 26, 26, 1), rgb(26, 26, 26));
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 1;
-  color: rgb(255, 255, 255);
-}
+/* desktop version */
+@media (1520px <=width <=2080px) {
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .onConstruction {
+    font-size: 50px;
+    color: white;
+    display: none;
+  }
+
+  h1 {
+    font-size: var(--h1-size);
+  }
+
+  p {
+    font-size: var(--p-size);
+  }
+
+  h2 {
+    font-size: var(--h2-size);
+  }
+
+  .navbar {
+    width: 100%;
+    height: 80px;
+    box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.105);
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    margin: 10px;
+  }
+
+  .navButton {
+    width: 100%;
+    height: 100%;
+    font-Size: 15pt;
+    color: rgb(227, 227, 227);
+    border-style: none;
+    background: rgb(27, 27, 27);
+    cursor: pointer;
+  }
+
+  .navButton:hover {
+    font-Size: 15pt;
+    color: rgb(56, 108, 221);
+    height: 100%;
+    width: 100%;
+    background-color: rgb(42, 50, 63);
+    border-style: none;
+    cursor: pointer;
+    transition-duration: 1s;
+  }
+
+  .btns {
+    display: flex;
+    width: 20vw;
+  }
+
+  .menuIcon {
+    display: none;
+  }
+
+  .logo {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imageLogo {
+    height: 60%;
+  }
+
+  .content {
+    width: 100%;
+    height: 720px;
+    background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(26, 26, 26, 1)), url('assets/astro-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .imgContent {
+    width: 50em;
+    animation: float infinite 2s linear;
+    opacity: 1;
+    animation-delay: 0s;
+  }
 
 
-.cards {
-  display: flex;
-  height: 500px;
-  width: 100%;
-  flex-direction: row;
-  align-items: center;
-  text-align: center;
-  justify-content: space-around;
-}
+  @keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
 
-.card {
-  height:80%;
-  width: 15%;
-  border-radius: 30px;
-  background-color: rgb(28, 28, 28);
-  box-shadow: 0 0px 10px 2px rgb(80, 80, 80, 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: justify;
-  flex-direction: column;
-  gap: 60px;
-  color: aliceblue;
-  padding: 50px;
+    50% {
+      transform: translate(0px, 4px);
+    }
 
-  transition-duration: 1s;
-}
+    100% {
+      transform: translate(0, 0);
+    }
+  }
 
-.card:hover {
-  height: 81%;
-  width: 16%;
-  border-radius: 30px;
-  background-color: rgb(28, 28, 28);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: justify;
-  color: aliceblue;
-  /* Distance between the element and the user */
-  padding: 50px;
-  perspective-origin: top left;
-  transform: translateY(-10px);
-  transition-duration: 1s;
-
-}
-
-.card:nth-of-type(1):hover .fireIcon {
-  color: orange;
-  transition-duration: 1s;
-}
-
-.card:nth-of-type(2):hover .timeIco {
-  color: rgb(0, 136, 255);
-  transition-duration: 1s;
-}
-
-.card:nth-of-type(3):hover .supportIco {
-  color: rgb(149, 0, 255);
-  transition-duration: 1s;
-}
-
-.aboutSection {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background-color: rgb(26, 26, 26);
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.sectionL,
-.sectionR {
-  text-align: center;
-  height: 100%;
-  margin-top: 7em;
-}
-
-.sectionR {
-  width: 50%;
-}
-
-.sectionL {
-  width: 30%;
-
-}
-
-.whatis {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgb(59, 52, 52);
-  background-color: rgb(48, 48, 48);
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 100px 0px 100px 0 ;
-
-  background: rgb(236, 236, 236);
-}
-
-footer {
-  height: 200px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  background-color: rgb(27, 66, 100);
-}
-
-.footersection {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  text-align: center;
-  color: white;
-  height: 30%;
-  width: 100%;
+  .serviceSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 800px;
+    gap: 200px;
+    background: linear-gradient(rgb(26, 26, 26, 1), rgb(26, 26, 26));
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    color: rgb(255, 255, 255);
+  }
 
 
-}
+  .cards {
+    display: flex;
+    height: 500px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+  }
 
-.btnfooter {
-  background-color: rgb(27, 66, 100);
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition-duration: 0.2s;
-  border-radius: 10px 10px 0 0;
-}
+  .card {
+    height: 81%;
+    width: 16%;
+    border-radius: 30px;
+    background-color: rgb(28, 28, 28);
+    box-shadow: 0 0px 10px 2px rgb(80, 80, 80, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    flex-direction: column;
+    gap: 60px;
+    color: aliceblue;
+    padding: 50px;
+    transition-duration: 1s;
+  }
 
-.btnfooter:hover {
+  .card:hover {
+    height: 81%;
+    width: 16%;
+    border-radius: 30px;
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: aliceblue;
+    padding: 50px;
+    perspective-origin: top left;
+    transform: translateY(-10px);
+    transition-duration: 1s;
 
-  height: 100%;
-  transform: translateY(-20px);
-  transition-duration: 0.2s;
-  border-radius: 10px 10px 0 0;
+  }
 
-}
+  .card:nth-of-type(1):hover .fireIcon {
+    color: orange;
+    transition-duration: 1s;
+  }
 
-#tradingview_widget_wrapper {
-  background-color: black;
-  width: 100%;
+  .card:nth-of-type(2):hover .timeIco {
+    color: rgb(0, 136, 255);
+    transition-duration: 1s;
+  }
+
+  .card:nth-of-type(3):hover .supportIco {
+    color: rgb(149, 0, 255);
+    transition-duration: 1s;
+  }
+
+  .aboutSection {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(26, 26, 26);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .sectionL,
+  .sectionR {
+    height: 100%;
+    margin-top: 7em;
+  }
+
+  .sectionR {
+    width: 50%;
+
+    text-align: left;
+  }
+
+  .sectionL {
+    width: 30%;
+    text-align: center;
+
+  }
+
+  .whatis {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(59, 52, 52);
+    flex-wrap: wrap;
+    width: 100%;
+    background: url('./assets/btc3dimage.png');
+    background-color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-size: 22%;
+    background-position-x: 50px;
+    transition-duration: 2s;
+  }
+
+  .whatis:hover {
+    animation: background-position infinite 2s ease-in-out;
+  }
+  @keyframes background-position {
+    0% {
+      background-position-y: 0;
+    }
+
+    50% {
+      background-position-y: 25px;
+    }
+
+    100% {
+      background-position-y: 0px;
+    }
+  }
+  .whatsText {
+    padding: 90px 110px 90px 500px;
+  }
+
+  .titleWhatIs {
+    margin-bottom: 10px;
+  }
+
+  footer {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: rgb(27, 66, 100);
+  }
+
+  .footersection {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+    height: 30%;
+    width: 100%;
+
+
+  }
+
+  .btnfooter {
+    background-color: rgb(27, 66, 100);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.2s;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .btnfooter:hover {
+
+    height: 100%;
+    transform: translateY(-20px);
+    transition-duration: 0.2s;
+    border-radius: 10px 10px 0 0;
+
+  }
+
+  #tradingview_widget_wrapper {
+    background-color: black;
+    width: 100%;
+  }
 }
